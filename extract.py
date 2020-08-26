@@ -1,11 +1,13 @@
 import csv
 import xlsxwriter 
+# 2.csv is original data
 file_name="2.csv"
 csvFile=open(file_name,'rt')
 csvReader=csv.reader(csvFile,delimiter=",")
 list_=list()
 for row in csvReader:
         list_.append(row)
+#1.csv is students data
 file_name2="1.csv"
 csvFile2=open(file_name2,'rt')
 csvReader2=csv.reader(csvFile2,delimiter=",")
@@ -34,6 +36,7 @@ for i in list2:
 print(list3)
 row = 0
 col = 0
+#60 to 80.xlsx is excel file name
 workbook = xlsxwriter.Workbook('60to80.xlsx')
 worksheet = workbook.add_worksheet("My sheet")
 for roll,name,college,jointime,leavetime,sessiontime in list3:
